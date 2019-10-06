@@ -94,13 +94,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241985da66185e04b810a50899c7e396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 0}
   speed: 9
   walkAcceleration: 75
   airAcceleration: 30
   airDeceleration: 5
   groundDeceleration: 70
   jumpHeight: 1.5
-  scaleRatio: 0.01
+  scaleRatio: 0.05
   closedEyesPrefab: {fileID: 8585452518502761755, guid: ed7673ac49f6b2948b595f52bf53a6c0,
     type: 3}
 --- !u!61 &8128838745949259106

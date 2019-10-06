@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class CharacterController2D : MonoBehaviour
 {
+
+    public GameManager gM;
     [SerializeField, Tooltip("Max speed, in units per second, that the character moves.")]
     float speed = 9;
 
@@ -43,6 +46,7 @@ public class CharacterController2D : MonoBehaviour
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        gM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -110,7 +114,7 @@ public class CharacterController2D : MonoBehaviour
 
             if (hit.transform.tag == "Goal") //win state
             {
-                print("you win");
+                SceneManager.LoadScene("WinScreen");
                 continue;
             }
             ColliderDistance2D colliderDistance = hit.Distance(boxCollider);
